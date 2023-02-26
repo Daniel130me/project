@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<form class="form-inline">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="hidden" id="member_id" value="{{ member.id }}">
+        <label for="firstname" class="form-label">Firstname</label>
+        <input type="text" id="firstname_" class="form-control" name="firstname" value="{{ member.firstname }}" placeholder="fname">
+    </div>
+    <div class="mb-3">
+        <label for="lastname" class="form-label">lastname</label>
+        <input type="text" id="lastname_" class="form-control" name="lastname" value="{{ member.lastname }}" placeholder="lname">
+    </div>
+    <input type="submit" id="update" class="form-control" value="Create">
+</form>
+{% endblock %}

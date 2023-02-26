@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<form id="index_form" class="form-inline">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="firstname" class="form-label">Firstname</label>
+        <input type="text" id="firstname" class="form-control" name="firstname" placeholder="fname">
+    </div>
+    <div class="mb-3">
+        <label for="lastname" class="form-label">lastname</label>
+        <input type="text" id="lastname" class="form-control" name="lastname" placeholder="lname">
+    </div>
+    <input type="submit" id="create" class="form-control" value="Create">
+</form>
+
+<div id="result" class="mt-5"></div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for member in members  %}
+                <tr>
+                    <th scope="row">{{ member.id }}</th>
+                    <td>{{ member.firstname }}</td>
+                    <td>{{member.lastname}}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning" onclick="edit(this.name)" name="{{ member.id }}">Edit</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteuser(this.name)" name="{{ member.id }}">Delete</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+  </table>
