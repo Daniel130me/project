@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from.models import User,Member
-from django.core.mail import send_mail
+# from django.core.mail import send_mail
 from django.http import JsonResponse, HttpResponse
 
 def index(req):
@@ -8,13 +8,13 @@ def index(req):
 def create(req):
     member = Member(firstname=req.POST['firstname'], lastname=req.POST['lastname'])
     member.save()
-    message = 'hello'
-    email = 'nieldigitalco@gmail.com'
-    send_mail('Contact form',
-              message,
-              'settings.EMAIL_HOST_USER',
-              [email],
-              fail_silently=False)
+#     message = 'hello'
+#     email = 'nieldigitalco@gmail.com'
+#     send_mail('Contact form',
+#               message,
+#               'settings.EMAIL_HOST_USER',
+#               [email],
+#               fail_silently=False)
     return redirect('/')
 
 # def read(req):
